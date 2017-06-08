@@ -4,3 +4,9 @@ D:\_sources\public\csharp\interval_graphs\interval_graphs\bin\Debug\interval_gra
 D:\_sources\public\csharp\interval_graphs\interval_graphs\obj\Debug\interval_graphs.csprojResolveAssemblyReference.cache
 D:\_sources\public\csharp\interval_graphs\interval_graphs\obj\Debug\interval_graphs.exe
 D:\_sources\public\csharp\interval_graphs\interval_graphs\obj\Debug\interval_graphs.pdb
+D:\_sources\public\csharp\graphe_intervalle\interval_graphs\obj\Debug\interval_graphs.csprojResolveAssemblyReference.cache
+D:\_sources\public\csharp\graphe_intervalle\interval_graphs\obj\Debug\interval_graphs.exe
+D:\_sources\public\csharp\graphe_intervalle\interval_graphs\obj\Debug\interval_graphs.pdb
+D:\_sources\public\csharp\graphe_intervalle\interval_graphs\bin\Debug\interval_graphs.exe.config
+D:\_sources\public\csharp\graphe_intervalle\interval_graphs\bin\Debug\interval_graphs.exe
+D:\_sources\public\csharp\graphe_intervalle\interval_graphs\bin\Debug\interval_graphs.pdb

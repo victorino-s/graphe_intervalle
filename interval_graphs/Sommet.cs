@@ -8,11 +8,30 @@ namespace interval_graphs
 {
     public class Sommet
     {
+        private Graphe _graph;
         private List<Arc> _arcs = new List<Arc>();
 
         private List<Sommet> _voisins = new List<Sommet>();
 
         string name;
+
+        private int degre = 0;
+
+        public int Degre
+        {
+            get
+            {
+                if (this.degre == 0)
+                {
+                    this.degre = _voisins.Count;
+                }
+                return this.degre;
+            }
+            private set
+            {
+                this.degre = value;
+            }
+        }
 
         public string Name
         {
@@ -36,7 +55,7 @@ namespace interval_graphs
             _voisins.Add(_arcs[_arcs.Count - 1].SommetArrive);
         }
 
-        public void AddArc(params Sommet[] liaisons)
+        public void AddArcs(params Sommet[] liaisons)
         {
             foreach (Sommet s in liaisons)
             {
@@ -58,6 +77,12 @@ namespace interval_graphs
         public Sommet(string name)
         {
             this.name = name;
+        }
+
+        public Sommet(string name, Graphe graph)
+        {
+            this.name = name;
+            this._graph = graph;
         }
 
         /*
@@ -120,6 +145,8 @@ namespace interval_graphs
         }
         //
         public List<Sommet> validSommet = new List<Sommet>();
+        /*
+
         public bool IsSimplicial()
         {
 
@@ -139,9 +166,44 @@ namespace interval_graphs
                 return true;
 
             return false;
+        }*/
+
+        public void CheckNeighbors()
+        {
+
+            foreach (Sommet s in GetVoisins)
+            {
+                if (s.Degre == 1) { Degre -= 1; }
+                if (Degre > 1)
+                {
+                    if (s.Degre > 1)
+                    {
+                        var commonNeighbors = s.GetVoisins.Intersect(GetVoisins);
+                        if (commonNeighbors.Count() < 1)
+                        {
+                            _graph.failedSommets.Add(this);
+                        }
+                    }
+                }
+                /*
+                else if (Degre >= 4)
+                {
+                    if (s.Degre > 1)
+                    {
+                        var commonNeighbors = s.GetVoisins.Intersect(GetVoisins);
+                        if (commonNeighbors.Count() < 2)
+                        {
+                            _graph.failedSommets.Add(this);
+                        }
+                    }
+                }*/
+                else
+                {
+                    return;
+                }
 
 
-
+            }
         }
 
 
